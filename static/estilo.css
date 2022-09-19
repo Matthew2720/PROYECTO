@@ -121,3 +121,7 @@ nav {
     margin-left:1rem;
     margin-right:1rem ;
 }
+
+#errorlogin{
+    color:red;
+}

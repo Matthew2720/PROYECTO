@@ -11,6 +11,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="icon" href="{{url_for('static',filename='logo.ico')}}" alt="logo icono">
+  <link rel="stylesheet" href="{{url_for('static',filename="estilo.css")}}">
 </head>
 
 <body>
@@ -66,7 +67,9 @@
               <div class='row'>
                 <button type='submit' name='btn_login'
                   class='col s12 btn btn-large waves-effect indigo'>Ingresar</button>
-                <label>{{malingreso}}</label>
+                  {% if malingreso%}
+                <label id="errorlogin">{{malingreso}}</label>
+                  {% endif%}
               </div>
             </center>
           </form>

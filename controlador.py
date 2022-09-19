@@ -44,6 +44,7 @@ def login():
             return render_template('inicioexitoso.html',logueado=nombrelogin[0])
         else:
             malingreso = "USUARIO O CONTRASEÑA INCORRECTA"
+            return render_template("login.html",malingreso = malingreso)
     return render_template("login.html")
 
 @app.route('/logueado',methods=['GET'])
