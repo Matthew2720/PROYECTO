@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetsFiles</title>
+
+  <!-- Compiled_and_minified_CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="icon" href="{{url_for('static',filename='logo.ico')}}" alt="logo">
+  <link rel="stylesheet" href="{{url_for('static', filename='registro.css')}}>
+</head>
+
+<body>
+<section>
+  <nav class="navbar navbar-expand-lg sticky-top py-3 shadow-sm" style="background-color: rgb(39, 150, 248) ;">
+    <div class="container">
+      <a href="#" class="navbar-brand"></a>
+      <img href="#" src="{{url_for('static',filename='logo.webp')}}" alt="logo" width="100" height="50" alt=""
+          class="d-inline-block align-middle mr-2">
+
+          <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        class="navbar-toggler"><span class="navbar-toggler-icon"></span>
+
+        <div id="navbarSupportedContent" class="collapse navbar-collapse d-flex d-flex justify-content-end">
+          <ul class="navbar-nav ml-auto fw-bold">
+            <li class="nav-item active"><a href="{{url_for('login')}}" class="nav-link ">Inicio Sesión <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item"><a href="{{url_for('index')}}" class="nav-link">Inicio</a></li>
+            </ul>
+        </div>
+      </nav>
+      </button>
+
+    <center>
+      <h3 class="indigo-text">Registrarse</h3>
+    </center>
+    <div class="container"></div>
+    <div class="row">
+    <!--FORMULARIO DE METODO POST********************************************* -->
+      <form class="col s12" action={{url_for('registro')}} method="post">
+    <!--ingresar_nombre_veterinaria-->
+    <div class="row">
+      <div class="input-field col s6">
+        <input name="nombre_vet" type="text">
+        <label for="nombre_vet">Ingresa el nombre de la veterinaria</label>
+      </div>
+    <!--ingresar_ciudad_veterinaria-->
+    <div class="row">
+      <div class="input-field col s6">
+        <input name="ciudad_vet" type="text">
+        <label for="ciudad_vet">Ciudad</label>
+      </div>
+    <!--ingresar_nombre-->
+        <div class="row">
+          <div class="input-field col s6">
+            <input name="nombre" type="text">
+            <label for="nombre">Ingresa tu(s) Nombre(s)</label>
+          </div>
+    <!--ingresa_apellido-->
+          <div class="input-field col s6">
+            <input name="apellido" type="text">
+            <label for="apellido">Ingresa tu(s) Apellido(s)</label>
+          </div>
+        </div>
+    <!--ingresar_documento-->
+        <div class="row">
+          <div class="input-field col s6">
+            <input name="documento" type="text">
+            <label for="documento">Numero de identificacion </label>
+          </div>
+    <!--ingresar_contraseña-->
+          <div class="input-field col s6">
+            <input name="password" type="password">
+            <label for="password">Ingrese su Contraseña</label>
+          </div>
+        </div>
+    <!--telefono-->
+        <div class="row">
+          <div class="input-field col s6">
+            <input name="telefono" type="text">
+            <label for="telefono">Telefono de contacto</label>
+          </div>
+    <!--ingresar_email-->
+          <div class="input-field col s6">
+            <input name="email" type="email">
+            <label for="email">Digite su correo electrónico</label>
+          </div>
+    <!--boton_registro-->
+          <div id="boton_reg">
+            <input type="submit" class="btn btn-info" value="Registrarse" /><br>
+    <!--ir_a_index-->
+            <a href="{{url_for('index')}}">Regresar</a>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+
+  </form>
+
+  </div>
+
+  </div>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+  
+</section>
+
+</body>
+
+</html>
