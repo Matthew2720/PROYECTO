@@ -49,6 +49,10 @@ def login():
 @app.route('/logueado',methods=['GET'])
 def sidio():
     return render_template("inicioexitoso.html")
+
+@app.route('/prueba',methods=['GET'])
+def prueba():
+    return render_template("prueba.html")
     
 #INICIO DEL SERVIDOR
 if __name__ == '__main__':
