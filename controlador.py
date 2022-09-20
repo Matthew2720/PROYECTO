@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect,url_for
+from flask import Flask,render_template,request
 from conexion import *
 from models import *
 
@@ -11,7 +11,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    # name = "carlos"
     return render_template("index.html")#,name=name)
 
 @app.route('/registro', methods=['GET','POST'])
