@@ -1,0 +1,523 @@
+.experiences {
+  /*para poder pegar la imagen*/
+  display: flex;
+  flex-direction: column;
+
+}
+
+.experiences-body {
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
+
+}
+
+.wave {
+  width: 100%;
+  /*el ancho va hacer del 100%*/
+  position: relative;
+  top: 2px;
+}
+
+.wave_bottom {
+  transform: scaleY(-1);
+  top: -2px;
+}
+
+.experiences-title {
+  text-align: left;
+  padding-left: 55px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 25px;
+}
+
+
+
+.experience-position {
+  font-weight: 500;
+  font-size: 18px;
+  margin-top: 20px;
+
+
+}
+
+.experience-description {
+  font-weight: 400;
+  font-size: 15px;
+  margin-top: 10px;
+
+
+
+}
+
+.experience {
+  padding: 25px;
+  max-width: 500px;
+  margin: 0 auto;
+
+}
+
+@media (min-width: 950px) {
+  .experiences-title {
+    font-size: 30px;
+    margin: 35px 0;
+    text-align: center;
+    padding-left: 0;
+  }
+
+
+  .experience-position {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+
+
+  }
+
+  .experience-description {
+    font-size: 20px;
+    margin-top: 10px;
+    line-height: 1.3;
+  }
+
+  .experience {
+    padding: 0;
+  }
+
+  .experience_left {
+    text-align: left;
+  }
+
+}
+
+/*https://fonts.google.com/?query=montserrat  para definir el tipo de letra*/
+:root {
+  /* la estructura para crear la variable seria 
+    --nom-variable-color:whitite*/
+  --theme-color: white;
+  --primary-color: #124f88;
+  --secundary-color: #0cb0e2;
+  --text-color-inverse: white;
+  --text-color: black;
+  --navbar-shallow-color: #e5e5e5;
+  /*sombra que va atener la barra de navegacion*/
+  --menu-mobile-background-color: #3A4460;
+  /*color que va a tener el fondo del menu en dispositivos moviles*/
+
+
+}
+
+/* aqui se define las variables- se pone root por ser un selector */
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  /*para que si por algun motivo no funciona el navegador tome el  tipo de letra desde el css*/
+  background-color: var(--theme-color);
+  color: var(--text-color);
+  padding-top: 70px;
+
+}
+
+/*para utilizar la variable seria.
+ background-color:var(--nom-variable-color)
+*/
+
+a {
+  /*para las  letras de la  navegacion*/
+  text-decoration: none;
+  color: var(--text-color)
+}
+
+/******movil*********/
+.horizontal-padding {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.vertical-padding {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+/******Escritorio*********/
+@media (min-width: 950px) {
+  .horizontal-padding {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+
+  .vertical-padding {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+.topheader {
+  box-shadow: 0 4px 5px var(--navbar-shallow-color);
+  /*box-shadow-Cuanto se va a correr la sombra en el eje x=0 y en el eje y X=4*  y que este difuminado con 5 px */
+  position: fixed;
+  /*para que la barra de navegacion no desaparesca  con el scroll*/
+  background-color: var(--theme-color);
+  left: 0;
+  top: 0;
+  width: 100%;
+  /*para que este a todo lo ancho*/
+  z-index: 100;
+
+}
+
+.topnav {
+  display: flex;
+  /* para que esten en fila ,uno al lado del otro.*/
+  justify-content: space-between;
+  /*para que haya espacio entre cada uno*/
+  padding: 10px;
+  max-width: 980px;
+  /*maximo ancho de la pagina*/
+  margin: 0 auto;
+  /* el primero es arriba y abajo y segundo es derec e izqui*/
+
+}
+
+/**************Logo*********/
+.logo {
+  display: flex;
+  /* para que esten en fila ,uno al lado del otro.*/
+  left: 15px;
+  /*para que los item esten centrados*/
+  align-items: center;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--primary-color)
+}
+
+.logo img {
+  /*para darle propiedades a la imagen del logo*/
+  border-radius: 50%;
+
+
+
+}
+
+/*****************menu********/
+.menu {
+  display: flex;
+  list-style: none;
+  /*para quitar puntos de la lista*/
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  padding: 0 10px;
+  /*se paracion de los itemn del menu*/
+
+}
+
+.menu a {
+  color: var(--text-color);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 50px;
+  /*para llevar el texto a la mtad*/
+  text-transform: uppercase;
+  /*para poner el texto en mayuscula*/
+  position: relative;
+
+
+
+}
+
+/*****TODO LO DE MENU VERTICAL******/
+
+.menu-vertical {
+  position: absolute;
+  display: none;
+
+  width: 125px;
+  background-color: rgba(216, 217, 219, 0.5);
+  padding: 0;
+  /*PAA QUITAR ESPACIOS EN EL MENU DE DESPLIE..*/
+  text-align: center;
+  /*para alinear el texto al centro*/
+  border-radius: 5px;
+  /*el borde es redondo*/
+  color: black;
+
+
+}
+
+
+.menu a::after {
+  content: "";
+  background-color: var(--secundary-color);
+  position: absolute;
+  left: 0;
+  top: calc(100% + 4px);
+  width: 100%;
+  height: 4px;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.menu a.selected::after,
+.menu a:hover::after {
+  opacity: 0.8;
+}
+
+.menu a:hover {
+  color: var(--primary-color);
+}
+
+.open-menu,
+.close-menu {
+  display: none;
+}
+
+/*para que cuando estemos en un pc de escritorio no se vea  los botones de cerrar y el de hamburguesa*/
+
+.logotype {
+  display: flex;
+  justify-content: center;
+}
+
+/*****************menu movil***************************************/
+@media (max-width: 950px) {
+
+  /* Menu */
+  .menu {
+    flex-direction: column;
+    /*para que esten en columna*/
+    position: fixed;
+    /*para que se acople a todo el ancho de la pagina*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    align-items: center;
+    /*para alinear los item de la fila*/
+    background-color: var(--menu-mobile-background-color);
+    height: 100%;
+    overflow-y: auto;
+    /*para la barra de scroll automatica*/
+
+    opacity: 0;
+    /*tranparencia 1 es  color y 0.5 es transparencia con color-
+         se pone cero para que no permita visualizar el menu*/
+    pointer-events: none;
+    /*para que cuando se de click no haga nada*/
+    transition: opacity 0.3s;
+    /*Esta es  tiempo de  transicion de  una pestaña a  otra por  medio del evento toggle*/
+  }
+
+  .menu li {
+    padding: 0;
+  }
+
+  .menu a {
+    color: var(--text-color-inverse);
+    /*colo de texto*/
+    line-height: 70px;
+    /*alto de linea*/
+    font-size: 25px;
+    /*tamaño de la letra*/
+  }
+
+  .open-menu,
+  .close-menu {
+    display: block;
+    /*para que se vean los iconos*/
+    border: none;
+    background: none;
+    cursor: pointer;
+    /*para cuando el puntero pase por el icono se ponga la manito*/
+  }
+
+  .close-menu {
+    align-self: flex-end;
+    /*para que aline la imagen hasta el final*/
+    padding: 20px 15px;
+    /*dimensiones de ubicacion del iconoce cerrar*/
+  }
+
+  .menu_opened {
+    opacity: 1;
+    /*cuando el menu este abierto  la transparencia se va a ir */
+    pointer-events: all;
+    /* se podra dar click*/
+  }
+
+  .open-menu:focus:not(:focus-visible),
+  .close-menu:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /*focus-visible  - por medio de la tecla tab , puede poner el marco , pero si va online (Con el cursor no poner el recuadro del icono)*/
+
+  .menu a::after {
+    content: none;
+  }
+
+  .menu a:hover,
+  .menu a.selected {
+    color: var(--secundary-color);
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap");
+
+/* se importa la fuente desde googlefont.*/
+.profile-info {
+  margin-bottom: 25px;
+}
+
+.profile-img {
+  /*tdo sobre las imagenes*/
+  width: 80%;
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 5px lightblue;
+}
+
+.profile-img-section {
+  position: relative;
+}
+
+
+
+.profile {
+  text-align: center;
+  /*para alinear el texto */
+}
+
+.profile-title {
+  /*toda la informacion del titulo*/
+  font-size: 35px;
+  /*tamaño*/
+  font-weight: bold;
+  /*para que este mas fuerte la letra*/
+  margin: 0;
+  color: var(--primary-color);
+  font-family: "Noto Sans", sans-serif;
+}
+
+.profile-details {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.3;
+  /*oara tener mas espacio dentro los elementos*/
+  max-width: 450px;
+  margin: 20px auto;
+  /*deb de tenerlo para que este centrado*/
+}
+
+.profile-btn {
+  /* background-image: linear-gradient(to left, #00B7da ,#161569);*/
+  /*para difuminar el color de los botones en dos*/
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
+  border: none;
+  font-size: 20px;
+  padding: 0.5em 1em;
+  /* se pone en la medida de rem por que seria la mitad del font-size osea si es 20px seria =10px  y si es 1 em seria=20px*/
+  border-radius: 7px;
+  cursor: pointer;
+  /*otro cursor*/
+}
+
+
+.profile-btn:hover {
+  filter: brightness(130%);
+  /*para ponerle brillo a el btn*/
+}
+
+@media (min-width: 950px) {
+  .profile-info {
+    margin-bottom: 0px;
+  }
+
+  .profile-img {
+    width: 100%;
+    max-width: 350px;
+    transform: scaleX(-1);
+    /*para cambiar la orientacion de la imagen*/
+  }
+
+  .profile {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    max-width: 980px;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  .profile-title {
+    /*titulo*/
+
+    font-size: 40px;
+  }
+
+  .profile-details {
+    /*letra de la pagina*/
+    font-size: 18px;
+    margin: 30px 0;
+  }
+
+  .profile-btn {
+    font-size: 20px;
+  }
+}
+
+.skills {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.skills-title {
+  font-size: 30px;
+  /*Tamaño de fuente*/
+  font-weight: bold;
+  /*negrita*/
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.skills-skill {
+  font-size: 20px;
+  /*tamaño*/
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  /*sombra*/
+  border-radius: 42px;
+  padding: 0.5em 0.7em;
+  margin: 10px;
+}
+
+.skills-list {
+  list-style: none;
+  /*para quitar los puntos de las listas*/
+  padding: 0;
+
+  display: flex;
+  /*un elemnto al lado del otro*/
+  flex-wrap: wrap;
+  /* se ponen uno debajo del otro*/
+  justify-content: center;
+  /*para que el contenido este centrado*/
+}
+
+/*para computador*/
+@media(min-width: 950px) {
+  .skills-title {
+    font-size: 30px;
+  }
+
+  .skills-skill {
+    font-size: 20px;
+
+    margin: 20px;
+
+  }
+}

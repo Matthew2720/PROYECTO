@@ -1,8 +1,9 @@
-nav {
+/* nav {
     margin-left: 1rem;
     margin-right: 1rem;
     margin-bottom: 1rem
-}
+} */
+
 
 #carrusel {
     position: relative;
@@ -124,4 +125,17 @@ nav {
 
 #errorlogin{
     color:blue;
+}
+
+#lista{
+    position: absolute;
+    left: 0rem;
+}
+
+.btn-dark{
+    padding: 0.9rem;
+}
+
+#cabeza {
+    background-color: aqua;
 }
