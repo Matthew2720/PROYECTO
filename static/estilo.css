@@ -25,9 +25,9 @@
     text-decoration: dashed
 }
 
-#aside1 {
+/* #aside1 {
     height: 22rem;
-}
+} */
 
 .contenido {
     padding-top: 2rem;
@@ -139,3 +139,7 @@
 #cabeza {
     background-color: aqua;
 }
+
+/* #imagen2{
+margin-bottom: -40rem;
+} */

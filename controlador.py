@@ -40,7 +40,7 @@ def login():
         if inicio:
             nombrelogin = Veterinaria.get_name_veterinaria(nombre_vet) #CON ESTE METODO SI EL NOMBRE EXISTE LO PASAMOS COMO NOMBRE DE LOGIN
             print(nombrelogin)
-            return render_template('inicioexitoso.html',logueado=nombrelogin[0])
+            return render_template('base.html',logueado=nombrelogin[0])
         else:
             malingreso = "USUARIO O CONTRASEÑA INCORRECTA"
             return render_template("login.html",malingreso = malingreso)
