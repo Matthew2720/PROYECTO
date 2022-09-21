@@ -4,11 +4,6 @@ from models import *
 
 app = Flask(__name__)
 
-#LOGIN MANAGER
-# login_manager = LoginManager()
-# login_manager.init_app(app)
-# login_manager.login_view = "login"
-
 @app.route('/', methods=['GET','POST'])
 def index():
     return render_template("index.html")#,name=name)
@@ -36,23 +31,34 @@ def login():
         contra = request.form.get("password")
         nombre_vet = request.form.get("nombre_vet")
         print(nombre_vet + contra)
-        inicio = Veterinaria.login(nombre_vet,contra)  #CON ESTE METODO VALIDAMOS EL LOGIN
-        if inicio:
+        inicio = Veterinaria.login(Veterinaria,nombre_vet,contra)  #CON ESTE METODO VALIDAMOS EL LOGIN
+        if inicio[0] == True:
             nombrelogin = Veterinaria.get_name_veterinaria(nombre_vet) #CON ESTE METODO SI EL NOMBRE EXISTE LO PASAMOS COMO NOMBRE DE LOGIN
-            print(nombrelogin)
-            return render_template('base.html',logueado=nombrelogin[0])
+            print(inicio)
+            return render_template('logued.html',logueado=nombrelogin[0])
         else:
             malingreso = "USUARIO O CONTRASEÑA INCORRECTA"
             return render_template("login.html",malingreso = malingreso)
     return render_template("login.html")
 
-@app.route('/logueado',methods=['GET'])
-def sidio():
-    return render_template("inicioexitoso.html")
+@app.route('/registroEmpleado',methods=['GET','POST'])
+def regemp():
+    if request.method=="POST":
+        pass
+    else:
+        usuario = Veterinaria.get_logueado(Veterinaria,"vacio")
+        if usuario:
+            print("Inicio =")
+            usuario = usuario[0]
+            print(usuario)
+            return render_template('regemp.html',user = usuario)
+        else:
+            return render_template('index.html')
+    
 
 @app.route('/prueba',methods=['GET'])
 def prueba():
-    return render_template("prueba.html")
+    return render_template('logued.html')
     
 #INICIO DEL SERVIDOR
 if __name__ == '__main__':

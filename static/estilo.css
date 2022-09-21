@@ -124,7 +124,7 @@
 }
 
 #errorlogin{
-    color:blue;
+    color:red;
 }
 
 #lista{
@@ -140,6 +140,6 @@
     background-color: aqua;
 }
 
-/* #imagen2{
-margin-bottom: -40rem;
-} */
+section{
+    align-items: center;
+}

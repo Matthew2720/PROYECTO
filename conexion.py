@@ -1,5 +1,9 @@
 import pyodbc
-direccion_servidor = 'LAPTOP-TMMAPQRU'
+#SERVIDOR DE FREDY
+# direccion_servidor = 'LAPTOP-TMMAPQRU'
+
+#SERVIDOR DE MATEO
+direccion_servidor = 'DESKTOP-F9S5AFJ'
 nombre_bd = 'FILEPETS'
 nombre_usuario = 'sa'
 password = '123456'

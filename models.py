@@ -1,6 +1,6 @@
 from conexion import *
-bool = False
 class Veterinaria():
+    logued = "vacio"
     #Metodo constructor
     def __init__(self,nombre_vet,ciudad_vet, nombre,apellido, documento, telefono, email,password):
         self.nombre_vet = nombre_vet
@@ -21,8 +21,8 @@ class Veterinaria():
             cursor.commit()
             cursor.close()
             
-    @staticmethod
-    def login(nombre_vet,password):
+
+    def login(self,nombre_vet,password):
         inicio = False
         cursor = db.cursor() #APUNTA A LA BASE DE DATOS
         #PRIMER CONSULTA
@@ -36,12 +36,15 @@ class Veterinaria():
         if persona and password:
                 print (f"Inicio de sesion exitoso, bienvenido {persona}")
                 inicio = True
+                self.logued = persona
+                verificacion = self.logued
+                print(verificacion)
         else:
+            inicio = False
             print(f"Usuario y/o contraseña incorrecta")
         cursor.close()
-        return inicio
-        
-        
+        return inicio,self.logued
+          
     def get_name_veterinaria(nombre_vet):
         cursor = db.cursor()
         consulta="SELECT nombre_vet FROM CENTRO WHERE nombre_vet = ?"
@@ -52,10 +55,15 @@ class Veterinaria():
             return existe
         else:
             print("No existe la veterinaria en la base de datos")
-    
-    # login("Tobias","123456")
-    # get_name_veterinaria("Tobias")
-    
+            
+    def get_logueado(self,vacio):
+        if vacio == self.logued:
+            print("Sigue vacio")
+        else:
+            logued = self.logued
+            return logued
 
-
-        
+# Veterinaria.login(Veterinaria,"Carlos","nomelase")
+# jj = Veterinaria.get_logueado(Veterinaria,"vacio")
+# print("Aqui esta el resultado")
+# print(jj)
