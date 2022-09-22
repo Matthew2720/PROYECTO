@@ -21,7 +21,8 @@ def registro():
         email = request.form.get("email")
         veterinaria = Veterinaria(nombre_vet,ciudad_vet,nombre,apellido,documento,telefono,email,password)
         veterinaria.crear_contacto()
-        return render_template ("index.html")
+        mensaje = "REGISTRO EXITOSO"
+        return render_template ("registro.html",mensaje = mensaje)
     else:
         return render_template("registro.html")
     
