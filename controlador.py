@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET','POST'])
 def index():
-    return render_template("index.html")#,name=name)
+    return render_template("index.html")
 
 @app.route('/registro', methods=['GET','POST'])
 def registro():
@@ -24,6 +24,14 @@ def registro():
         return render_template ("index.html")
     else:
         return render_template("registro.html")
+    
+@app.route('/soporte', methods=['GET','POST'])
+def soporte():
+    if request.method=="POST":
+        mensaje = "REPORTE ENVIADO"
+        return render_template("soporte.html",mensaje = mensaje)
+    else:
+        return render_template("soporte.html")
 
 @app.route('/login', methods=['GET','POST'])
 def login():
@@ -41,17 +49,29 @@ def login():
             return render_template("login.html",malingreso = malingreso)
     return render_template("login.html")
 
-@app.route('/registroEmpleado',methods=['GET','POST'])
-def regemp():
+@app.route('/registroUsuario',methods=['GET','POST'])
+def regUsuario():
+    usuario = Veterinaria.get_logueado(Veterinaria,"vacio")
     if request.method=="POST":
-        pass
+        documento = request.form.get("documento")
+        nombre_usuario=request.form.get("nombre_usuario")
+        telefono=request.form.get("telefono")
+        direccion=request.form.get("direccion")
+        email=request.form.get("email")
+        usuarionuevo = Usuario(documento,nombre_usuario,telefono,direccion,email)
+        usuario = usuario[0]
+        usuario = str(usuario)
+        print("Validando datos")
+        print(usuario)
+        usuarionuevo.subirUsuario(usuario)
+        mensaje = "REGISTRO EXITOSO"
+        return render_template('regUsuario.html',user = usuario, mensajeRegistro = mensaje)
     else:
-        usuario = Veterinaria.get_logueado(Veterinaria,"vacio")
         if usuario:
             print("Inicio =")
             usuario = usuario[0]
             print(usuario)
-            return render_template('regemp.html',user = usuario)
+            return render_template('regUsuario.html',user = usuario)
         else:
             return render_template('index.html')
     
@@ -59,6 +79,14 @@ def regemp():
 @app.route('/prueba',methods=['GET'])
 def prueba():
     return render_template('logued.html')
+    
+@app.route('/soportesl',methods=['GET','POST'])
+def soportesinLogin():
+    if request.method=="POST":
+        mensaje = "REPORTE ENVIADO"
+        return render_template("soportesinlog.html",mensaje = mensaje)
+    else:
+        return render_template("soportesinlog.html")
     
 #INICIO DEL SERVIDOR
 if __name__ == '__main__':

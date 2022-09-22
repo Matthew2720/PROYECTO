@@ -67,3 +67,18 @@ class Veterinaria():
 # jj = Veterinaria.get_logueado(Veterinaria,"vacio")
 # print("Aqui esta el resultado")
 # print(jj)
+
+class Usuario():
+    def __init__(self,documento,nombre_usuario,telefono,direccion,email):
+         self.documento = documento
+         self.nombre_usuario = nombre_usuario
+         self.telefono = telefono
+         self.direccion = direccion
+         self.email = email
+         
+    def subirUsuario(self,veteApuntada):
+            cursor = db.cursor()
+            consulta = "INSERT INTO USUARIOS(id_Usuario,nombre_Usuario,tel_Usuario,direccion_Usuario,email_Usuario,fnombre_vet) VALUES (?,?,?,?,?,?);"
+            cursor.execute(consulta,self.documento,self.nombre_usuario,self.telefono,self.direccion,self.email,veteApuntada)
+            cursor.commit()
+            cursor.close()

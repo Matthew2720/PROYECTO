@@ -22,7 +22,7 @@
 
       <!-- logo -->
       <a class="navbar-brand" href="#">
-        <img src="{{url_for('static',filename='logo.webp')}}" alt="Avatar Logo" style="width:100px;"
+        <img src="{{url_for('static',filename='/img/logo.webp')}}" alt="Avatar Logo" style="width:100px;"
           class="rounded-pill">
       </a>
 
@@ -39,10 +39,7 @@
             <a class="btn btn-online-dark" href="{{url_for('login')}}">Ingresar</a>
           </li>
           <li class="nav-item">
-            <a class="btn btn-online-dark" href="#">Soporte</a>
-          </li>
-          <li class="nav-item">
-            <a class="btn btn-online-dark" href="#">Mi Cuenta</a>
+            <a class="btn btn-online-dark" href="{{url_for('soportesinLogin')}}">Soporte</a>
           </li>
         </ul>
       </div>
@@ -58,22 +55,22 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="{{url_for('static',filename='perro2.webp')}}" class="d-block w-100" alt="...">
+        <img src="{{url_for('static',filename='/img/perro2.webp')}}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{{url_for('static',filename='perro.webp')}}" class="d-block w-100" alt="...">
+        <img src="{{url_for('static',filename='/img/perro.webp')}}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{{url_for('static',filename='vet.webp')}}" class="d-block w-100" alt="...">
+        <img src="{{url_for('static',filename='/img/vet.webp')}}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{{url_for('static',filename='gato.webp')}}" class="d-block w-100" alt="...">
+        <img src="{{url_for('static',filename='/img/gato.webp')}}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{{url_for('static',filename='animales.webp')}}" class="d-block w-100" alt="...">
+        <img src="{{url_for('static',filename='/img/animales.webp')}}" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="{{url_for('static',filename='historia.webp')}}" class="d-block w-100" alt="...">
+        <img src="{{url_for('static',filename='/img/historia.webp')}}" class="d-block w-100" alt="...">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -88,7 +85,7 @@
   <br><br>
   <div class="row">
     <div class="col sm-3">
-      <img id="patas" src="{{url_for('static',filename='Perro16.webp')}}">
+      <img id="patas" src="{{url_for('static',filename='/img/Perro16.webp')}}">
       <div id="empresa" class="btn-group-vertical">
         <h2>Empresa</h2>
         <button type="button" class="btn btn-outline-secondary">Inicio</button>
@@ -147,13 +144,13 @@
           <br>
           <p>Mejorar la calidad de los procesos realizados en las veterinarias en ejercicio de su labor, haciendo
             uso de herramientas informaticas que satisfagan la necesidad vigente.</p>
-          <p><img id="imagen2" src="{{url_for('static',filename='logo.webp')}}"></p>
+          <p><img id="imagen2" src="{{url_for('static',filename='/img/logo.webp')}}"></p>
         </div>
       </div>
     </div>
     <footer id="foo1">
       <a href="https://api.whatsapp.com/send?phone=573003704921" target="_blank"><img id="wpp"
-          src="{{url_for('static',filename='iconowhatsaap.webp')}}" width="70px"></a>
+          src="{{url_for('static',filename='/img/iconowhatsaap.webp')}}" width="70px"></a>
     </footer>
   </div>
 
