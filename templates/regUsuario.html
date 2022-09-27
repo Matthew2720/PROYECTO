@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "base2.html" %}
 
 {% block title %}Bienvenido {{user}}{% endblock %}
 
@@ -6,17 +6,12 @@
 {% block content %}
 <!-- Formulario -->
 <center>
-        <h1>Bienvenido {{user}}</h1>
-        <h3 class="indigo-text">Formulario de registro de cliente nuevo</h3>
-        <br>
-        <h4 class="indigo-text">Ingresar cliente</h4>
+        <h3 class="indigo-text">Registro cliente nuevo</h3>
 </center>
     <div class="container"></div>
-    <div class="row">
         <!--FORMULARIO DE METODO POST********************************************* -->
         <form class="col s12" action={{url_for('regUsuario')}} method="post">
             <!--ingresar_cedula_usuario-->
-        <div class="row">
                 <div class="form-group">
                         <label for="documento" class="form-label">Ingresa numero de documento</label>
                         <input class="form-control" name="documento" type="text" required>
@@ -26,36 +21,29 @@
                         <label for="nombre_usuario">Nombre completo</label>
                         <input class="form-control" name="nombre_usuario" type="text" required>
                 </div>
-        </div>
                 <!--ingresar_nombre-->
-        <div class="row">
-                        <div class="form-group">
-                                <label for="telefono">Telefono</label>
-                                <input class="form-control" name="telefono" type="text" required>
-                        </div>
+                <div class="form-group">
+                        <label for="telefono">Telefono</label>
+                        <input class="form-control" name="telefono" type="text" required>
+                </div>
                 <!--direccion-->
-                        <div class="form-group">
-                                <label for="direccion">Direccion</label>
-                                <input class="form-control" name="direccion" type="text" required>
-                        </div>
-        </div>
+                <div class="form-group">
+                        <label for="direccion">Direccion</label>
+                        <input class="form-control" name="direccion" type="text" required>
+                </div>
                 <!--email-->
-        <div class="row">
-                        <div class="form-group">
-                                <label for="email">Correo electronico </label>
-                                <input class="form-control" name="email" type="email" required>
-                        </div>
+                <div class="form-group">
+                        <label for="email">Correo electronico </label>
+                        <input class="form-control" name="email" type="email" required>
+                </div>
         
                 <!--boton_registro-->
-                        <div id="boton_reg">
-                                <br>
-                                <input  type="submit" class="btn btn-info" value="Registrar usuario" /><br>
-                                {% if mensajeRegistro%}
-                                <h1>{{mensajeRegistro}}</h1>
-                                {% endif %}
-                        </div>
-        </div>
-                    </div>
+                <div id="boton_reg">
+                        <br>
+                        <input  type="submit" class="btn btn-info" value="Registrar usuario" /><br>
+                        {% if mensajeRegistro%}
+                        <h1>{{mensajeRegistro}}</h1>
+                        {% endif %}
                 </div>
         </form>
     </div>

@@ -78,7 +78,7 @@ def regUsuario():
 
 @app.route('/prueba',methods=['GET'])
 def prueba():
-    return render_template('logued.html')
+    return render_template('base2.html')
     
 @app.route('/soportesl',methods=['GET','POST'])
 def soportesinLogin():
