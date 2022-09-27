@@ -1,4 +1,5 @@
 from conexion import *
+# from werkzeug.security import generate_password_hash
 class Veterinaria():
     logued = "vacio"
     #Metodo constructor
@@ -15,6 +16,7 @@ class Veterinaria():
 #Método CREATE -> Crear una nueva persona o contacto de la base de datos
     def crear_contacto(self):
         #Creamos nueva instancia
+            # hash = generate_password_hash(self.password)
             cursor = db.cursor()
             consulta = "INSERT INTO CENTRO(NOMBRE_VET,CIUDAD_VET,NOMBRE,APELLIDO,DOCUMENTO,TEL_CENTRO,EMAIL_CENTRO,PASSWORD) VALUES (?,?,?,?,?,?,?,?);"
             cursor.execute(consulta,self.nombre_vet,self.ciudad_vet,self.nombre,self.apellido,self.documento,self.telefono,self.email,self.password)
@@ -34,14 +36,10 @@ class Veterinaria():
         cursor.execute(consulta2,password)
         password = cursor.fetchone()
         if persona and password:
-                print (f"Inicio de sesion exitoso, bienvenido {persona}")
                 inicio = True
                 self.logued = persona
-                verificacion = self.logued
-                print(verificacion)
         else:
             inicio = False
-            print(f"Usuario y/o contraseña incorrecta")
         cursor.close()
         return inicio,self.logued
           
